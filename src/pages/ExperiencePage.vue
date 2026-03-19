@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md bg-gradient">
+  <q-page class="q-pa-lg bg-dark-page">
     <div class="constrain-width">
       <h2 class="text-h4 text-weight-bold q-my-md text-center text-white">Experience</h2>
       
@@ -44,18 +44,26 @@
 </script>
 
 <style scoped lang="scss">
-.bg-gradient {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-}
 .constrain-width {
   max-width: 1000px;
   margin: 0 auto;
 }
+
 :deep(.q-timeline__subtitle) {
-  color: $primary;
+  color: $secondary;
   opacity: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
+
 :deep(.q-timeline__title) {
-  color: white;
+  color: $primary;
+  font-weight: 800;
+  text-shadow: 0 0 10px rgba(0, 245, 160, 0.3);
+}
+
+:deep(.q-timeline__content) {
+  color: #e2e8f0;
 }
 </style>

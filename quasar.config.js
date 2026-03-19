@@ -190,7 +190,7 @@ export default defineConfig((/* ctx */) => {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'sfw',
+        appId: 'portfolio',
       },
     },
 

@@ -1,35 +1,93 @@
 <template>
-  <q-page class="flex flex-center column bg-gradient">
-    <div class="text-center q-pa-md constrain-width">
-      <q-avatar size="200px" class="q-mb-md shadow-10">
-        <img src="https://cdn.quasar.dev/img/boy-avatar.png">
-      </q-avatar>
-      
-      <h1 class="text-h2 text-weight-bold q-mb-sm text-white">Your Name</h1>
-      <div class="text-h5 text-primary q-mb-lg">Full Stack Developer | Computer Scientist</div>
-      
-      <p class="text-white text-body1 q-mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-        Passionate about creating elegant and efficient web solutions. 
-        Experienced in modern web technologies and always eager to learn more.
-      </p>
-      
-      <div class="row justify-center q-gutter-md">
-        <q-btn size="lg" color="primary" label="View Projects" to="/projects" />
-        <q-btn size="lg" outline color="white" label="Contact Me" href="mailto:your.email@example.com" />
+  <q-page class="flex flex-center column q-pa-lg">
+    <div class="terminal-container full-width" style="max-width: 800px;">
+      <div class="terminal-header">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+        <div class="text-grey-5 q-ml-sm text-caption font-mono">portfolio.js — bash</div>
+      </div>
+      <div class="terminal-body font-mono">
+        <div class="q-mb-md">
+          <span class="text-neon">$</span> <span class="text-white">whoami</span>
+          <div class="text-cyan q-ml-md">alexander_labiano</div>
+        </div>
+        
+        <div class="q-mb-md">
+          <span class="text-neon">$</span> <span class="text-white">cat profile.json</span>
+          <div class="q-ml-md">
+            <pre class="text-white q-ma-none whitespace-pre-wrap">{{ typedText }}<span class="cursor">|</span></pre>
+          </div>
+        </div>
+
+        <div v-if="animationDone" class="q-mt-xl row q-gutter-md animate__animated animate__fadeIn">
+          <q-btn 
+            unelevated 
+            color="primary" 
+            text-color="black" 
+            label="View Projects" 
+            to="/projects" 
+            class="glow-btn text-weight-bold" 
+          />
+          <q-btn 
+            outline 
+            color="primary" 
+            label="Download CV" 
+            class="glow-btn" 
+          />
+        </div>
       </div>
     </div>
   </q-page>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue';
+
+const fullText = `{
+  "name": "Alexander Labiano",
+  "role": "Full Stack Developer",
+  "location": "Spain",
+  "skills": ["Vue.js", "Quasar", "Node.js", "Firebase"],
+  "mission": "Building elegant solutions for complex problems"
+}`;
+
+const typedText = ref('');
+const animationDone = ref(false);
+
+onMounted(() => {
+  let i = 0;
+  const interval = setInterval(() => {
+    typedText.value += fullText[i];
+    i++;
+    if (i === fullText.length) {
+      clearInterval(interval);
+      animationDone.value = true;
+    }
+  }, 30);
+});
 </script>
 
 <style scoped lang="scss">
-.bg-gradient {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+.font-mono {
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
-.constrain-width {
-  max-width: 1200px;
-  margin: 0 auto;
+
+.cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: $primary;
+  animation: blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 </style>

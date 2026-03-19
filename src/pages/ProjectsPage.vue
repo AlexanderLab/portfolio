@@ -1,5 +1,5 @@
 <template>
-  <q-page class="q-pa-md bg-gradient">
+  <q-page class="q-pa-lg bg-dark-page">
     <div class="constrain-width">
       <h2 class="text-h4 text-weight-bold q-my-md text-center text-white">My Projects</h2>
       
@@ -10,8 +10,8 @@
             <q-img src="https://cdn.quasar.dev/img/parallax1.jpg" :ratio="16/9" />
             
             <q-card-section>
-              <div class="text-h6">SFW Project</div>
-              <div class="text-subtitle2 text-primary">Quasar Framework</div>
+              <div class="text-h6 text-neon">Portfolio Project</div>
+              <div class="text-subtitle2 text-cyan">Quasar Framework</div>
             </q-card-section>
 
             <q-card-section class="q-pt-none text-grey-4">
@@ -31,16 +31,16 @@
             <q-img src="https://cdn.quasar.dev/img/parallax2.jpg" :ratio="16/9" />
             
             <q-card-section>
-              <div class="text-h6">Another Awesome Project</div>
-              <div class="text-subtitle2 text-primary">Vue.js & Firestore</div>
+              <div class="text-h6 text-neon">Another Awesome Project</div>
+              <div class="text-subtitle2 text-cyan">Vue.js & Firestore</div>
             </q-card-section>
 
             <q-card-section class="q-pt-none text-grey-4">
               Description of another project showcasing different skills.
             </q-card-section>
-             <q-card-actions align="right">
-              <q-btn flat color="primary" label="View Code" />
-              <q-btn flat color="primary" label="Live Demo" />
+            <q-card-actions align="right">
+              <q-btn flat dense color="primary" label="View Code" class="glow-btn" />
+              <q-btn flat dense color="secondary" label="Live Demo" class="glow-btn" />
             </q-card-actions>
           </q-card>
         </div>
@@ -53,9 +53,6 @@
 </script>
 
 <style scoped lang="scss">
-.bg-gradient {
-  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-}
 .constrain-width {
   max-width: 1200px;
   margin: 0 auto;
@@ -64,6 +61,15 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  background: #1e293b !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  
+  &:hover {
+    border-color: $primary;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
   
   .q-card__section:last-of-type {
     flex-grow: 1;

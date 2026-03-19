@@ -1,6 +1,6 @@
-# SFW Web (sfw)
+# My Portfolio
 
-Web for the sunflower Samurais
+Personal portfolio website built with Quasar.
 
 ## Install the dependencies
 

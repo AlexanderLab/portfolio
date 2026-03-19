@@ -1,19 +1,16 @@
 <template>
   <q-layout view="lHh Lpr lff">
-    <q-header elevated class="bg-black">
+    <q-header elevated class="glass-header">
       <q-toolbar class="constrain-width">
-        <!-- Logo/Title -->
         <q-toolbar-title class="sunflower-title" shrink>
           <router-link to="/" class="title-link">
-            <!-- You can replace this with your own logo -->
-            <q-avatar size="32px" color="primary" text-color="white" class="q-mr-sm">Y</q-avatar>
-            <span>YOUR NAME</span>
+            <q-avatar size="32px" color="primary" text-color="black" class="q-mr-sm shadow-2">Y</q-avatar>
+            <span class="text-neon">YOUR PORTFOLIO</span>
           </router-link>
         </q-toolbar-title>
 
         <q-space />
 
-        <!-- Desktop Navigation -->
         <div class="desktop-nav gt-sm">
           <q-btn flat label="About" to="/" :class="{ 'active-nav': currentTab === 'home' }" />
           <q-btn flat label="Experience" to="/experience" :class="{ 'active-nav': currentTab === 'experience' }" />
@@ -21,7 +18,6 @@
           <q-btn flat label="Skills" to="/skills" :class="{ 'active-nav': currentTab === 'skills' }" />
         </div>
 
-        <!-- Mobile Menu Button -->
         <q-btn
           flat
           dense
@@ -34,27 +30,26 @@
       </q-toolbar>
     </q-header>
 
-    <!-- Mobile Drawer -->
-    <q-drawer v-model="drawerOpen" side="right" overlay behavior="mobile" class="bg-black">
+    <q-drawer v-model="drawerOpen" side="right" overlay behavior="mobile" class="bg-dark-page">
       <q-list dark>
-        <q-item-label header class="text-primary">PORTFOLIO</q-item-label>
+        <q-item-label header class="text-neon">MENU</q-item-label>
         
-        <q-item clickable v-ripple to="/" @click="drawerOpen = false" active-class="text-primary">
+        <q-item clickable v-ripple to="/" @click="drawerOpen = false" active-class="text-neon">
           <q-item-section avatar><q-icon name="person" /></q-item-section>
           <q-item-section>About Me</q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple to="/experience" @click="drawerOpen = false" active-class="text-primary">
+        <q-item clickable v-ripple to="/experience" @click="drawerOpen = false" active-class="text-neon">
           <q-item-section avatar><q-icon name="work" /></q-item-section>
           <q-item-section>Experience</q-item-section>
         </q-item>
 
-        <q-item clickable v-ripple to="/projects" @click="drawerOpen = false" active-class="text-primary">
+        <q-item clickable v-ripple to="/projects" @click="drawerOpen = false" active-class="text-neon">
           <q-item-section avatar><q-icon name="code" /></q-item-section>
           <q-item-section>Projects</q-item-section>
         </q-item>
 
-         <q-item clickable v-ripple to="/skills" @click="drawerOpen = false" active-class="text-primary">
+         <q-item clickable v-ripple to="/skills" @click="drawerOpen = false" active-class="text-neon">
           <q-item-section avatar><q-icon name="build" /></q-item-section>
           <q-item-section>Skills</q-item-section>
         </q-item>
@@ -65,11 +60,10 @@
       <router-view />
     </q-page-container>
 
-    <!-- Footer -->
-    <q-footer class="bg-black q-pa-md">
+    <q-footer class="bg-dark-page q-pa-md border-top">
       <div class="footer-content constrain-width text-center">
-        <div class="text-white text-caption">
-          © {{ new Date().getFullYear() }} Your Name. Built with Quasar.
+        <div class="text-grey-5 text-caption">
+          © {{ new Date().getFullYear() }} Your Name. Built with Quasar & Neon Magic.
         </div>
       </div>
     </q-footer>
@@ -104,13 +98,14 @@ function toggleDrawer() {
 }
 
 .title-link {
-  color: $primary;
   text-decoration: none;
   display: flex;
   align-items: center;
   
   span {
-    font-weight: 700;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-family: 'Fira Code', monospace;
   }
 }
 
@@ -121,6 +116,7 @@ function toggleDrawer() {
   :deep(.q-btn) {
     color: rgba(255, 255, 255, 0.7);
     font-weight: 600;
+    text-transform: none;
 
     &:hover {
       color: $primary;
@@ -129,7 +125,12 @@ function toggleDrawer() {
     &.active-nav {
       color: $primary;
       border-bottom: 2px solid $primary;
+      border-radius: 0;
     }
   }
+}
+
+.border-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 </style>
