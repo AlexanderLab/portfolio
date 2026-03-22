@@ -1,0 +1,48 @@
+This one is the technical delivery manager one in erictel: 
+
+Project: Technical Delivery & Project Management (Erictel)
+
+Problem:
+Clients required new features and projects but needed technical validation, planning and clear communication between business and development teams.
+
+Solution:
+Acted as a bridge between clients and technical teams, ensuring feasibility, proper planning and successful delivery of features.
+
+Tech:
+Project Management, Agile, Documentation, Technical Analysis
+
+Key Contributions:
+- Gathered and analyzed client requirements for new features and projects
+- Evaluated technical feasibility and estimated effort and timelines
+- Led meetings with both technical teams and business stakeholders
+- Produced official technical documentation
+- Managed task planning, sprint organization and team coordination
+- Initiated team management responsibilities and workflow optimization
+
+Impact:
+Improved project clarity, delivery planning and communication between stakeholders, ensuring efficient execution of client requirements.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This one is the cctv one, lets rename it to Network & Systems Support (Mitsl)
+
+Project: Network & Systems Support (Mitsl)
+
+Problem:
+Hotels required stable network infrastructure, POS systems and quick resolution of technical incidents to ensure uninterrupted operations.
+
+Solution:
+Provided on-site technical support and infrastructure maintenance, solving real-time issues and implementing new network setups when required.
+
+Tech:
+Networking, Linux, CCTV Systems, POS Systems, Hardware Support
+
+Key Contributions:
+- Maintained and troubleshot networks and POS systems in production environments
+- Configured private WiFi networks for events and specific use cases
+- Installed and managed CCTV systems in hotel facilities
+- Resolved real-time technical incidents in high-demand environments
+- Delivered small custom technical solutions based on client needs
+
+Impact:
+Ensured continuous operation of critical systems in hospitality environments, gaining strong experience in real-world problem solving and infrastructure management.
